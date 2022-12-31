@@ -1,22 +1,20 @@
 import React from 'react';
 import {
+  Button,
   SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
-
-
 
 const App = () => {
 
 
   return (
     <SafeAreaView>
-      <Text>helloo</Text>
+      <Button title="testtt" onPress={()=>{
+        console.log(0)
+      }}/>
+      <Text>dasd</Text>
     </SafeAreaView>
   );
 };
