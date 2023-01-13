@@ -2,7 +2,6 @@ import {View, Text, Button} from 'react-native';
 import React from 'react';
 import NavigationServices from '_navigations/NavigationServices';
 import StackNames from '_navigations/StackNames';
-import {translate} from '_locales/i18n';
 
 const Dashboard = () => {
   return (

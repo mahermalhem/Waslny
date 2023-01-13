@@ -1,7 +1,14 @@
 const Scenes = {
   splash: 'Splash',
-  landing: 'Landing',
-  dashboard: 'Dashboard',
+  Signin:"signIn",
+  Signup:"signUp",
 };
 
-export default Scenes;
+const Stack = {
+  authenticationStack: 'AuthenticationStack',
+  authenticatedUserDrawer: 'AuthenticatedDrawer',
+  authenticatedDriverDrawer: 'AuthenticatedDrawer',
+  splashStack:"SplashStack",
+};
+
+export default {Scenes, Stack};

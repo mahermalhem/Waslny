@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: ArefRuqaa-Regular
+font link: https://fonts.google.com/specimen/Aref+Ruqaa
+font author: Abdullah Aref
+font author site: https://www.facebook.com/areffonts
+
+
+icon designer: Alfredo @ IconsAlfredo.com
+icon designer link: /AlfredoCreates
+        
+{"bg":"transparent","icon-gradient-0":"#783192","icon-gradient-1":"#59BCC8","font":"#000000","slogan":"#141414"}
+      

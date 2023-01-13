@@ -5,16 +5,14 @@ import {
   Text,
   View,
 } from 'react-native';
+import AppInit from './src/scenes/AppInit';
 
 const App = () => {
 
 
   return (
-    <SafeAreaView>
-      <Button title="testtt" onPress={()=>{
-        console.log(0)
-      }}/>
-      <Text>dasd</Text>
+    <SafeAreaView style={{flex:1,backgroundColor:"transparent"}}>
+      <AppInit/>
     </SafeAreaView>
   );
 };
