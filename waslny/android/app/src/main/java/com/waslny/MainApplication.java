@@ -9,6 +9,10 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.appcheck.FirebaseAppCheck;
+import com.google.firebase.appcheck.debug.DebugAppCheckProviderFactory;
+import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory;
 import com.waslny.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -56,6 +60,25 @@ public class MainApplication extends Application implements ReactApplication {
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+//      FirebaseApp.initializeApp(/*context=*/ this);
+//      FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+//      firebaseAppCheck.installAppCheckProviderFactory(
+//              DebugAppCheckProviderFactory.getInstance());
+
+//    FirebaseApp.initializeApp(this);
+//    FirebaseAppCheck.getInstance().installAppCheckProviderFactory(
+//      BuildConfig.DEBUG
+//        ?DebugAppCheckProviderFactory.getInstance()
+//        :PlayIntegrityAppCheckProviderFactory.getInstance()
+//    );
+
+      //another part
+
+//      FirebaseApp.initializeApp(this);
+//      FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+//      firebaseAppCheck.installAppCheckProviderFactory(
+//              PlayIntegrityAppCheckProviderFactory.getInstance());
+
   }
 
   /**

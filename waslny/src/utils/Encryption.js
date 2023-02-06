@@ -23,7 +23,7 @@ export const DecryptData = (encryptedBase64,doJsonParse=true, key='@dufatty@') =
 
     var iterations = parseInt(json.iterations);
     if (iterations <= 0) {
-        iterations = 999;
+        iterations = 10;
     }
     var encryptMethodLength = (encryptMethodLengthFunction()/4);// example: AES number is 256 / 4 = 64
     var hashKey = CryptoJS.PBKDF2(key, salt, {'hasher': CryptoJS.algo.SHA512, 'keySize': (encryptMethodLength/8), 'iterations': iterations});
@@ -42,7 +42,7 @@ export  const EncryptData = (string,key='@dufatty@')=>{
         const CryptoJS = require('crypto-js');
         var iv = CryptoJS.lib.WordArray.random(16);// the reason to be 16, please read on `encryptMethod` property. 
         var salt = CryptoJS.lib.WordArray.random(256);
-        var iterations = 999;
+        var iterations = 10;
         var encryptMethodLength = (encryptMethodLengthFunction()/4);// example: AES number is 256 / 4 = 64
         var hashKey = CryptoJS.PBKDF2(key, salt, {'hasher': CryptoJS.algo.SHA512, 'keySize': (encryptMethodLength/8), 'iterations': iterations}); 
         var encrypted = CryptoJS.AES.encrypt(string, hashKey, {'mode': CryptoJS.mode.CBC, 'iv': iv});

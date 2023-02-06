@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "808389905023",
+    "project_id": "waslny-e782e",
+    "storage_bucket": "waslny-e782e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808389905023:android:5a7e619338a52b750a4d4a",
+        "android_client_info": {
+          "package_name": "com.waslny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808389905023-0160bkf03lbifithst2qjfjtko1qoer1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQ3NkUQwxz06ra8WXiGw1su2FPcwV9LM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808389905023-0160bkf03lbifithst2qjfjtko1qoer1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
