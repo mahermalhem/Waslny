@@ -5,7 +5,6 @@ import Svg, {
   Defs, Title, ClipPath, RadialGradient,
   Stop, Line
 } from 'react-native-svg'
-import { COLOR } from './COLORS';
 import { normalize } from './FONT';
 import {
   heightPercentageToDP as hp,

@@ -29,7 +29,7 @@ const removeSecureData = async key => {
 };
 
 const storageKeys = {
-  selectedLanguage: 'selectedLanguage',
+  selectedLanguage: 'ar',
 };
 
 export {setSecureData, retrieveSecureData, removeSecureData, storageKeys};

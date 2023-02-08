@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, TextInput, View, StyleSheet, Text, FlatList, StatusBar} from 'react-native';
+import {Button, TextInput, View, Appearance, StyleSheet, Text, FlatList, StatusBar} from 'react-native';
 import ThemeProvider from './src/theme/ThemeProvider';
 import AppInit from './src/AppInit';
 import {FirebaseAppCheck} from '@capacitor-firebase/app-check';
@@ -11,9 +11,15 @@ import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import SplashScreen from 'react-native-splash-screen'
 import AuthStack from './src/AuthStack';
+import NetInfo from "@react-native-community/netinfo";
+import AppNotConnected from './src/components/AppNotConnected';
+import useTheme from './src/theme/useTheme';
+import { colors } from './src/styles/colors';
 
-function App() {
-    
+
+const App = ()=> {
+  const theme = useTheme();
+
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
@@ -23,6 +29,14 @@ function App() {
     setUser(user);
     if (initializing) setInitializing(false);
   }
+  const [isConnected, setIsConnected] = useState(true);
+
+  useEffect(() => {
+    NetInfo.addEventListener(state => {
+      console.log("Connection type", state.isConnected, state.type);
+      setIsConnected(state.isConnected)
+    });
+  }, [])
 
   useEffect(() => {
     SplashScreen.hide();
@@ -32,13 +46,12 @@ function App() {
   if (initializing) return null;
   return (
     <ThemeProvider>
-      <StatusBar backgroundColor={'red'} barStyle="light-content" />
-      {/* {!isConnected
+      <StatusBar backgroundColor={colors.light.BACKGROUND} barStyle={"dark-content" } />
+      {!isConnected
         ? <AppNotConnected />
         : null
-      } */}
-      {
-        !user 
+      }
+      {!user 
           ?<AuthStack/>
           :<AppInit/>
       }

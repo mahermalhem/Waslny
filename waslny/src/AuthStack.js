@@ -33,5 +33,4 @@ function AuthStack({navigation}, props) {
     </NavigationContainer>
   );
 }
-
 export default AuthStack;

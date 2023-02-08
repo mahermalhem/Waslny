@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SceneName from '../SceneName';
-import styles from './signIn.style';
+import styles from './/';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
 

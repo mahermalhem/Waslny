@@ -2,7 +2,6 @@ import React, { Component ,useState,useEffect,} from 'react';
 import { Dimensions, Platform, PixelRatio,PermissionsAndroid,Share} 
   from 'react-native';
 import { strings } from './I18n';
-import { COLOR } from './constants/COLORS';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const AuthContext = React.createContext();
