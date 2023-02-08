@@ -5,8 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {AuthContext} from './utils/helpers';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SceneName from './scenes/SceneName';
-import SignIn from './scenes/singIn/SignIn.component';
-
+import SignIn from './scenes/singIn/signIn.component';
 
 const StackHome = createStackNavigator();
 

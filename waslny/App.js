@@ -32,7 +32,7 @@ function App() {
   if (initializing) return null;
   return (
     <ThemeProvider>
-        <StatusBar backgroundColor={'red'} barStyle="light-content" />
+      <StatusBar backgroundColor={'red'} barStyle="light-content" />
       {/* {!isConnected
         ? <AppNotConnected />
         : null

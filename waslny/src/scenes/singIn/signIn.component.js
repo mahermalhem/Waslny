@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SceneName from '../SceneName'
+import styles from './signIn.style'
 
 const signIn = () => {
     auth()
@@ -28,9 +29,8 @@ const signIn = () => {
   };
 
 const SignIn = ({navigation}) => {
-
   return (
-    <View>
+    <View style={styles.container}>
         <Text>hello singIn</Text>
         <Button title={"Log in "} onPress={()=>{
             signIn()
@@ -38,6 +38,10 @@ const SignIn = ({navigation}) => {
         <Button title={"SingUP"} onPress={()=>{
             navigation.navigate(SceneName.SignUp)
         }}/>
+        <View>
+
+        </View>
+        <Text style={styles.welcome}>hello</Text>
     </View>
   );
 };
