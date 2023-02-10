@@ -15,8 +15,12 @@ import SceneName from '../SceneName';
 import styles from './signIn.style';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
+import {useDispatch, useSelector} from 'react-redux';
+import {hideLoader, showLoader} from '../../redux/actions/loaderAction';
+import {changeLanguageMethod} from '../../redux/actions/languageAction';
+import {saveLanguage, strings} from '../../locales/I18n';
 
-const signIn = () => {
+const signInMethod = () => {
   auth()
     .signInWithEmailAndPassword('maher.malhem2@gmail.com', '12345678')
     .then(() => {
@@ -34,6 +38,10 @@ const SignIn = () => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
 
+  const dispatch = useDispatch();
+  const isRTL = useSelector(state => state.languageReducer.isRtl);
+  const appLanguage = useSelector(state => state.languageReducer.appLanguage);
+
   return (
     <View style={style.body}>
       <Text style={style.title}>Home Screen</Text>
@@ -41,11 +49,24 @@ const SignIn = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
         lorem enim. Etiam accumsan nibh eu laoreet sollicitudin. Proin
         ultricies, metus nec auctor ultricies, dui metus vulputate odio, id
-        hendrerit lectus mauris a ex.
+        hendrerit lectus mauris a ex. {isRTL?"true":"false"} {appLanguage}
+        {strings('common.noRequests')}
       </Text>
       <Text style={style.referralCode}>3XP4N510</Text>
-      <Button onPress={() => {}} title="Accept" color={theme.colors.SUCCESS} />
-      <Button onPress={() => {theme.toggleTheme()}} title="Decline" color={theme.colors.ERROR} />
+      <Button onPress={() => {
+        dispatch(showLoader())
+        setTimeout(() => {
+          dispatch(hideLoader())
+        }, 3500);
+      }} title="Accept" color={theme.colors.SUCCESS} />
+      <Button onPress={() => {
+         dispatch(changeLanguageMethod({appLanguage: 'ar'}));
+         saveLanguage('ar');
+      }} title="Decline" color={theme.colors.ERROR} />
+       <Button onPress={() => {
+         dispatch(changeLanguageMethod({appLanguage: 'en'}));
+         saveLanguage('en');
+      }} title="Decline" color={theme.colors.ERROR} />
     </View>
   );
 };

@@ -1,4 +1,9 @@
 export const SAVE_DATA = 'SAVE_DATA';
 export const CLEAR_DATA = 'CLEAR_DATA';
-
-export const SAVE_THEME = 'SAVE_THEME';
+export const CHANGE_DIRECTION = 'CHANGE_DIRECTION';
+export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
+export const SHOW_LOADER = 'SHOW_LOADER';
+export const HIDE_LOADER = 'HIDE_LOADER';
+export const OPEN_BOTTOM_SHEET = 'OPEN_BOTTOM_SHEET';
+export const CLOSE_BOTTOM_SHEET = 'CLOSE_BOTTOM_SHEET';
+export const SET_USER = 'SET_USER';

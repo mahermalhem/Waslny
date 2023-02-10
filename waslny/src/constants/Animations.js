@@ -10,6 +10,11 @@ const AllAnimation={
     MONEY_PAPER_PLANE:require("../productAssets/animations/money_paper_plane.json"),
     SETTINGS:require("../productAssets/animations/settings.json"),
 
+    CAR_RUNNING:require("../productAssets/animations/sedanCar.json"),
+    MAN_WAITING_CAR:require("../productAssets/animations/manWaitingCar.json"),
+    CAR_LOADER:require("../productAssets/animations/carRevolving.json"),
+
+
 }
 
 export {AllAnimation};

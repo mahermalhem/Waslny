@@ -15,10 +15,15 @@ import NetInfo from "@react-native-community/netinfo";
 import AppNotConnected from './src/components/AppNotConnected';
 import useTheme from './src/theme/useTheme';
 import { colors } from './src/styles/colors';
-
+import Loader from './src/components/Loader';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { changeLanguageMethod } from './src/redux/actions/languageAction';
+import {useDispatch, useSelector} from 'react-redux';
+import I18n from 'react-native-i18n';
 
 const App = ()=> {
   const theme = useTheme();
+  const dispatch = useDispatch();
 
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
@@ -36,6 +41,15 @@ const App = ()=> {
       console.log("Connection type", state.isConnected, state.type);
       setIsConnected(state.isConnected)
     });
+    const setLanguage = async () => {
+      var storedlocal = await AsyncStorage.getItem('local')
+      if (storedlocal) {
+        console.log('storedlocal in app init', storedlocal)
+        dispatch(changeLanguageMethod({ 'appLanguage': storedlocal }))
+        I18n.locale = storedlocal
+      }
+    };
+    setLanguage()
   }, [])
 
   useEffect(() => {
@@ -43,6 +57,10 @@ const App = ()=> {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
   }, []);
+  
+
+
+
   if (initializing) return null;
   return (
     <ThemeProvider>
@@ -55,6 +73,7 @@ const App = ()=> {
           ?<AuthStack/>
           :<AppInit/>
       }
+      <Loader/>
     </ThemeProvider>
   );
 }

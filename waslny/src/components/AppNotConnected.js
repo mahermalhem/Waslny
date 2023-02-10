@@ -8,6 +8,7 @@ import Modal from "react-native-modal";
 import { FONT_FAMILY } from '../constants/FONT';
 import { strings } from '../locales/I18n';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { colors } from '../styles/colors';
 
 const AppNotConnected = (props) => {
     
@@ -15,7 +16,7 @@ const AppNotConnected = (props) => {
         <Modal isVisible={true} >
             <View style={{ backgroundColor:'white',borderRadius:30,height:wp(50),justifyContent:'center',alignItems:'center'}}>
                 <Icon name="warning" size={wp(20)} color='red' />
-                <Text style={{fontFamily:FONT_FAMILY,color:COLOR.RED}}>{strings('common.noInternetConnection')}</Text>
+                <Text style={{fontFamily:FONT_FAMILY,color:colors.dark.ERROR}}>{strings('common.noInternetConnection')}</Text>
             </View>
         </Modal>
     );
