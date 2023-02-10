@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SceneName from '../SceneName';
-import styles from './signIn.style';
+import styles from './index.style';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
 import {useDispatch, useSelector} from 'react-redux';
@@ -55,6 +55,7 @@ const SignIn = () => {
       <Text style={style.referralCode}>3XP4N510</Text>
       <Button onPress={() => {
         dispatch(showLoader())
+        theme.toggleTheme()
         setTimeout(() => {
           dispatch(hideLoader())
         }, 3500);
