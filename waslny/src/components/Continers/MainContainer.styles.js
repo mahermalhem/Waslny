@@ -11,7 +11,6 @@ StyleSheet.create({
     backgroundColor: theme.colors.BACKGROUND,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    padding: 20,
   },
   title: {
     color: theme.colors.PRIMARY,

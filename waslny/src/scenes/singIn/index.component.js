@@ -5,9 +5,9 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
-  Button,Text,
   Image,
   TextInput,
+  ScrollView,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SceneName from '../SceneName';
@@ -18,6 +18,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {hideLoader, showLoader} from '../../redux/actions/loaderAction';
 import {changeLanguageMethod} from '../../redux/actions/languageAction';
 import {saveLanguage, strings} from '../../locales/I18n';
+import { Text, Button} from 'react-native-paper';
+import { FONT_FAMILY } from '../../constants/FONT';
+import MainContainer from '../../components/Continers/MainContainer.component';
+import CText from '../../components/CText';
 
 const signInMethod = () => {
   auth()
@@ -42,32 +46,9 @@ const SignIn = () => {
   const appLanguage = useSelector(state => state.languageReducer.appLanguage);
 
   return (
-    <View style={style.body}>
-      <Text style={style.title}>Home Screen</Text>
-      <Text style={style.text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
-        lorem enim. Etiam accumsan nibh eu laoreet sollicitudin. Proin
-        ultricies, metus nec auctor ultricies, dui metus vulputate odio, id
-        hendrerit lectus mauris a ex. {isRTL?"true":"false"} {appLanguage}
-        {strings('common.noRequests')}
-      </Text>
-      <Text style={style.referralCode}>3XP4N510</Text>
-      <Button onPress={() => {
-        dispatch(showLoader())
-        theme.toggleTheme()
-        setTimeout(() => {
-          dispatch(hideLoader())
-        }, 3500);
-      }} title="Accept" color={theme.colors.SUCCESS} />
-      <Button onPress={() => {
-         dispatch(changeLanguageMethod({appLanguage: 'ar'}));
-         saveLanguage('ar');
-      }} title="Decline" color={theme.colors.ERROR} />
-       <Button onPress={() => {
-         dispatch(changeLanguageMethod({appLanguage: 'en'}));
-         saveLanguage('en');
-      }} title="Decline" color={theme.colors.ERROR} />
-    </View>
+    <MainContainer>
+      <Text>heeeeee</Text>
+    </MainContainer>
   );
 };
 

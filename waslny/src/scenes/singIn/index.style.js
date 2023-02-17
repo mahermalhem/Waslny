@@ -11,7 +11,6 @@ StyleSheet.create({
     backgroundColor: theme.colors.BACKGROUND,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    padding: 20,
   },
   title: {
     color: theme.colors.PRIMARY,
@@ -30,6 +29,10 @@ StyleSheet.create({
     fontSize: theme.typography.size.S,
     letterSpacing: theme.typography.letterSpacing.L,
     fontWeight: 'bold',
+  },
+  forgotPassword: {
+    marginTop: 8,
+    textAlign: 'right',
   },
 });
 
