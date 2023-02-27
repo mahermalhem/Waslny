@@ -6,7 +6,6 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Image,
-  TextInput,
   ScrollView,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
@@ -22,6 +21,8 @@ import { Text, Button} from 'react-native-paper';
 import { FONT_FAMILY } from '../../constants/FONT';
 import MainContainer from '../../components/Continers/MainContainer.component';
 import CText from '../../components/CText';
+import { TextInput } from 'react-native-paper';
+import TextInputComp from '../../components/TextInputComp.js/index.component';
 
 const signInMethod = () => {
   auth()
@@ -44,10 +45,14 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const isRTL = useSelector(state => state.languageReducer.isRtl);
   const appLanguage = useSelector(state => state.languageReducer.appLanguage);
+  const [text, setText] = React.useState("");
 
   return (
     <MainContainer>
       <Text>heeeeee</Text>
+      <TextInputComp isPassword />
+      <TextInputComp leftIcon="email-outline"/>
+
     </MainContainer>
   );
 };
