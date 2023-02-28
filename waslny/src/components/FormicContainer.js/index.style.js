@@ -6,10 +6,8 @@ import {
 
 const styles = theme =>
   StyleSheet.create({
-    textInput: {
-      width: '85%',
-      marginBottom: wp(3),
-    },
+    scroll: {flex: 1, width: '100%'},
+    view: {alignItems: 'center', justifyContent: 'center'},
   });
 
 export default styles;

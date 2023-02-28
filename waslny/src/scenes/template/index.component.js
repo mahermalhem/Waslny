@@ -68,6 +68,14 @@ const SignIn = () => {
          dispatch(changeLanguageMethod({appLanguage: 'en'}));
          saveLanguage('en');
       }} title="Decline" color={theme.colors.ERROR} />
+
+      //change theme
+      <Button onPress={async () => {
+
+      await AsyncStorage.setItem('choosenTheme',colors.Mode.Light)
+        theme.toggleTheme()
+      }} title="Decline" color={theme.colors.ERROR} />
+
     </View>
   );
 };

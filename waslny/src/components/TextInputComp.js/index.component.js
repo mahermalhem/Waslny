@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { TextInput,Text } from 'react-native-paper';
+import { Alert, TouchableOpacity } from 'react-native';
+import { TextInput, Text } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
@@ -9,47 +9,59 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
+import { colors } from '../../styles/colors';
 
-const TextInputComp = (props) => {
+const TextInputComp = props => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
 
-  const {label,placeholder,leftIcon,isPassword} = props
-  const [text, setText] = React.useState("");
+  const { label,textColor , iconColor, value, onBlur, placeholder, leftIcon, isPassword, errorMsg, onChangeText } = props;
   const [isSecurePass, setIsSecurePass] = React.useState(isPassword);
 
-  const chagneSecure=()=>{
-    setIsSecurePass(!isSecurePass)
+  const chagneSecure = () => {
+    setIsSecurePass(!isSecurePass);
+  };
+  const showError = () => {
+    Alert.alert(errorMsg.toString())
   }
+
   return (
     <TextInput
-      label="Email"
-      value={text}
+      label={placeholder}
+      textColor={textColor}
+      value={value}
       secureTextEntry={isSecurePass}
-      onChangeText={text => setText(text)}
-      placeholder={'Email'}
+      onChangeText={onChangeText}
+      onBlur={onBlur}
+      placeholder={placeholder}
       style={style.textInput}
       mode="outlined"
-      outlineColor={theme.colors.SUN_FLOWER}
-      activeOutlineColor={theme.colors.SUN_FLOWER}
-      theme={{ roundness: 16 }}
+      outlineColor={iconColor}
+      activeOutlineColor={iconColor}
+      theme={{ roundness: wp(5) }}
       left={
-        isPassword
-        ?<TextInput.Icon
-          onPress={chagneSecure}
-          icon={isSecurePass?'eye-off':'eye'}
-          iconColor={theme.colors.SUN_FLOWER}
-          style={style.leftIcon}
-          size={wp(7)}
-        />
-        :<TextInput.Icon
-          onPress={isPassword && chagneSecure}
-          icon={leftIcon}
-          iconColor={theme.colors.SUN_FLOWER}
-          style={style.leftIcon}
-          size={wp(7)}
-        />
+        isPassword ? (
+          <TextInput.Icon
+            onPress={chagneSecure}
+            icon={isSecurePass ? 'eye-off' : 'eye'}
+            iconColor={iconColor}
+            size={wp(7)}
+          />
+        ) : (
+          <TextInput.Icon
+            onPress={isPassword && chagneSecure}
+            icon={leftIcon}
+            iconColor={iconColor}
+            size={wp(7)}
+          />
+        )
       }
+      right={errorMsg && <TextInput.Icon
+        onPress={showError}
+        icon={'alert'}
+        iconColor={colors.light.ERROR}
+        size={wp(7)}
+      />}
     />
   );
 };

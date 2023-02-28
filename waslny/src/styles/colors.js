@@ -28,4 +28,9 @@ const dark = {
   TEXT_SECONDARY: SILVER,
 };
 
-export const colors = {light, dark};
+const Mode = {
+  Dark:'dark',
+  Light:'light'
+};
+
+export const colors = {light, dark, Mode};
