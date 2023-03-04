@@ -6,6 +6,7 @@ import {AuthContext} from './utils/helpers';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SceneName from './scenes/SceneName';
 import SignIn from './scenes/singIn/index.component';
+import PinCode from './scenes/pinCode/index.component';
 
 const StackHome = createStackNavigator();
 
@@ -25,6 +26,15 @@ function AuthStack({navigation}, props) {
           component={SignIn}
           options={{
             title: 'Sign in',
+            // When logging out, a pop animation feels intuitive
+            animationTypeForReplace:'push',
+          }}
+        />
+        <Stack.Screen
+          name={SceneName.PinCode}
+          component={PinCode}
+          options={{
+            title: 'Pin code',
             // When logging out, a pop animation feels intuitive
             animationTypeForReplace:'push',
           }}

@@ -9,6 +9,7 @@ const styles = theme =>
     textInput: {
       width: '85%',
       marginBottom: wp(3),
+      alignSelf:'center'
     },
   });
 

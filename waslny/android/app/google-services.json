@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "808389905023",
+    "firebase_url": "https://waslny-e782e-default-rtdb.firebaseio.com",
     "project_id": "waslny-e782e",
     "storage_bucket": "waslny-e782e.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "808389905023-67ccogqhni3c0njlkitpn9jp5mlts2k4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.waslny",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
         {
           "client_id": "808389905023-0160bkf03lbifithst2qjfjtko1qoer1.apps.googleusercontent.com",
           "client_type": 3

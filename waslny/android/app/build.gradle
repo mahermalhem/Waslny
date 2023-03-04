@@ -260,6 +260,8 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'com.google.firebase:firebase-appcheck-debug:16.1.1'
     implementation 'androidx.browser:browser:1.4.0'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
 
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {

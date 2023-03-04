@@ -15,7 +15,7 @@ const TextInputComp = props => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
 
-  const { label,textColor , iconColor, value, onBlur, placeholder, leftIcon, isPassword, errorMsg, onChangeText } = props;
+  const { label,textColor,keyboardType , iconColor, value, onBlur, placeholder, leftIcon, isPassword, errorMsg, onChangeText } = props;
   const [isSecurePass, setIsSecurePass] = React.useState(isPassword);
 
   const chagneSecure = () => {
@@ -27,7 +27,7 @@ const TextInputComp = props => {
 
   return (
     <TextInput
-      label={placeholder}
+      label={label ? label : placeholder}
       textColor={textColor}
       value={value}
       secureTextEntry={isSecurePass}
@@ -39,6 +39,7 @@ const TextInputComp = props => {
       outlineColor={iconColor}
       activeOutlineColor={iconColor}
       theme={{ roundness: wp(5) }}
+      keyboardType={keyboardType}
       left={
         isPassword ? (
           <TextInput.Icon

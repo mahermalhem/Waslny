@@ -1,5 +1,6 @@
 {
   "common":{
+    "language":"English",
     "networkDefaultMessage":"حصل خطأ ما",
     "wrongEmailOrPassword":"خطأ في الاميل او الرقم السري",
     "ok":"حسنا",
@@ -19,8 +20,15 @@
     "or":"أو قم ب",
     "thisFeatureIsInTesting":"هذه الخاصية قيد التجربة",
     "total":"المجموع",
-    "noRecordsFound":"لا يوجد بيانات !"
-
+    "noRecordsFound":"لا يوجد بيانات !",
+    "email":"الاميل",
+    "password":"كلمة السر",
+    "phoneNumber":"رقم الهاتف"
+  },
+  "FirebaseErrors":{
+    "emailAlreadyInUse":"الاميل مستخدم !",
+    "wrongPassword":"كلمة السر غير صحيحة",
+    "userNotFound":"المستخدم غير موجود !"
   },
   "splash": {
     "splashTitle": "سبلاش"
@@ -44,7 +52,17 @@
     "forgetPassword":"نسيت كلمة السر !",
     "pleaseEnterValidEmail":"الرجاء إدخال اميل صحيح",
     "emailIsRequired":"الاميل مطلوب",
-    "passwordIsRequired":"كلمة السر مطلوبة"
+    "passwordIsRequired":"كلمة السر مطلوبة",
+    "dontHaveAnAccount":"ليس لديك حساب !",
+    "signUp":"تسجيل حساب جديد ",
+    "phoneLogin":"رقم الهاتف",
+    "emailLogin":"الاميل",
+    "use":"استخدم",
+    "phoneNumberIsRequired":"رقم الهاتف مطلوب!",
+    "phoneNumberInstruction":"رقم الهاتف يتكون من 10 ارقام و يبدأ ب 07 ",
+    "areU":"هل انت ؟",
+    "driver":"سائق",
+    "customer":"عميل"
   },
   "addBeneficiary":{
     "addBeneficiary":"إضافة مستفيد",

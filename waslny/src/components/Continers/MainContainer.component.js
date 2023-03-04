@@ -17,11 +17,10 @@ const MainContainer = props => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
   const disKeyboard = () => {
-    console.log('nnno')
     Keyboard.dismiss();
   };
   return (
-    <TouchableWithoutFeedback style={{backgroundColor:'green'}} onPress={disKeyboard}>
+    <TouchableWithoutFeedback onPress={disKeyboard}>
       <View style={style.body}>{props.children}</View>
     </TouchableWithoutFeedback>
   );

@@ -58,9 +58,6 @@ const App = ()=> {
     return subscriber; // unsubscribe on unmount
   }, []);
   
-
-
-
   if (initializing) return null;
   return (
     <ThemeProvider>

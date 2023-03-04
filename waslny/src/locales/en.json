@@ -1,5 +1,6 @@
 {
   "common":{
+    "language":"عربي",
     "networkDefaultMessage":"Something went wrong",
     "wrongEmailOrPassword":"Wrong email or password",
     "ok":"Ok",
@@ -19,8 +20,18 @@
     "or":"OR",
     "thisFeatureIsInTesting":"This feature is in testing mode",
     "total":"Total",
-    "noRecordsFound":"No records found !"
+    "noRecordsFound":"No records found !",
+    "email":"Email",
+    "password":"Password",
+    "phoneNumber":"Phone number"
   },
+  "firebaseErrors":{
+    "emailAlreadyInUse":"Email already in use !",
+    "wrongPassword":"Wrong password !",
+    "userNotFound":"User not found !",
+    "noPhoneUser":"User was not found in our database"
+  },
+
   "splash": {
     "splashTitle": "Splash Screen"
   },
@@ -43,7 +54,17 @@
     "forgetPassword":"Forget your password!",
     "pleaseEnterValidEmail":"Please enter valid email address",
     "emailIsRequired":"Email is required",
-    "passwordIsRequired":"Password is required"
+    "passwordIsRequired":"Password is required",
+    "dontHaveAnAccount":"Don't have an account !",
+    "signUp":"SIGN UP",
+    "phoneLogin":"Phone number",
+    "emailLogin":"Email",
+    "use":"Use",
+    "phoneNumberIsRequired":"Phone number is required!",
+    "phoneNumberInstruction":"Should be 10 numbers starts with 07",
+    "areU":"Are you ؟",
+    "driver":"Driver",
+    "customer":"Customer"
   },
   "addBeneficiary":{
     "addBeneficiary":"Add beneficiary",

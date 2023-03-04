@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import {RFValue} from 'react-native-responsive-fontsize';
+import { FONT_FAMILY } from '../../constants/FONT';
 
 type Props = TextProps & {
   fontFamily?: string;
@@ -19,9 +20,9 @@ type Props = TextProps & {
 const CText = (props: Props) => {
 
   const {
-    fontFamily,
+    fontFamily=FONT_FAMILY,
     fontSize = 16,
-    color ='red',
+    color,
     style,
     children,
     onPress,

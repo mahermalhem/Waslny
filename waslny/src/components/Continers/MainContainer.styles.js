@@ -10,6 +10,8 @@ const styles = theme =>
       flex: 1,
       backgroundColor: theme.colors.BACKGROUND,
       alignItems: 'center',
+      marginBottom:wp(4),
+      marginTop:wp(0.5)
     },
     title: {
       color: theme.colors.PRIMARY,

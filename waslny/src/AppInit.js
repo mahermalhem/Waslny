@@ -17,7 +17,7 @@ function AppInit({navigation},props) {
   return (
     <View>
       <Button title='LogOUT' onPress={()=>{
-        console.log(auth().currentUser.email)
+        console.log(auth().currentUser?.email)
         auth().signOut()
       }}> </Button>
     </View>
