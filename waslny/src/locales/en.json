@@ -31,7 +31,9 @@
     "userNotFound":"User not found !",
     "noPhoneUser":"User was not found in our database"
   },
-
+  "firebaseSuccess":{
+    "emailSent":"Email sent"
+  },
   "splash": {
     "splashTitle": "Splash Screen"
   },
@@ -64,7 +66,8 @@
     "phoneNumberInstruction":"Should be 10 numbers starts with 07",
     "areU":"Are you ؟",
     "driver":"Driver",
-    "customer":"Customer"
+    "customer":"Customer",
+    "sendEmail":"Send email"
   },
   "addBeneficiary":{
     "addBeneficiary":"Add beneficiary",

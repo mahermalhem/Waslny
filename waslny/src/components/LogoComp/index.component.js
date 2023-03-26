@@ -24,6 +24,8 @@ const LogoComp = props => {
    <View style={{flex:0.8,width:'100%',height:'100%'}}>
       <View style={{flex:0.3,alignItems:'center',justifyContent:'center'}}>
         <Text style={style.title}>Waslny</Text>
+        <Text style={style.title}>وصلني محافظات</Text>
+
       </View>
       <View style={{flex:0.5,}}>
         <Lottie source={AllAnimation.MAN_WAITING_CAR} autoPlay={true} loop={false}/>

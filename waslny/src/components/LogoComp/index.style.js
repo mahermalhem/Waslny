@@ -14,7 +14,7 @@ const styles = theme =>
     title: {
       color: theme.colors.PRIMARY,
       fontSize: theme.typography.size.L,
-      letterSpacing: theme.typography.letterSpacing.M,
+      letterSpacing: theme.typography.letterSpacing.L,
       fontWeight: 'bold',
     },
     text: {

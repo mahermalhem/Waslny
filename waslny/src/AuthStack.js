@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import SceneName from './scenes/SceneName';
 import SignIn from './scenes/singIn/index.component';
 import PinCode from './scenes/pinCode/index.component';
+import ToastComp from './components/ToastComp/index.component';
 
 const StackHome = createStackNavigator();
 

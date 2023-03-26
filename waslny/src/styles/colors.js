@@ -1,6 +1,6 @@
 // Colors palette source https://flatuicolors.com/palette/defo
 
-const SUN_FLOWER = '#f1c40f';
+const SUN_FLOWER = '#000f89';
 const ASBESTOS = '#7f8c8d';
 const MIDNIGHT_BLUE = '#2c3e50';
 const EMERALD = '#2ecc71';

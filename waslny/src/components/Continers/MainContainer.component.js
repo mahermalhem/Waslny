@@ -12,6 +12,7 @@ import {colors} from '../styles/colors';
 import styles from './MainContainer.styles';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
+import ToastComp from '../ToastComp/index.component';
 
 const MainContainer = props => {
   const theme = useTheme();
@@ -21,7 +22,10 @@ const MainContainer = props => {
   };
   return (
     <TouchableWithoutFeedback onPress={disKeyboard}>
-      <View style={style.body}>{props.children}</View>
+      <View style={style.body}>
+        <ToastComp />
+        {props.children}
+      </View>
     </TouchableWithoutFeedback>
   );
 };

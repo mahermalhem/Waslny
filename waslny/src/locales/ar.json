@@ -30,6 +30,9 @@
     "wrongPassword":"كلمة السر غير صحيحة",
     "userNotFound":"المستخدم غير موجود !"
   },
+  "firebaseSuccess":{
+    "emailSent":"تم إرسال الايميل"
+  },
   "splash": {
     "splashTitle": "سبلاش"
   },
@@ -62,7 +65,9 @@
     "phoneNumberInstruction":"رقم الهاتف يتكون من 10 ارقام و يبدأ ب 07 ",
     "areU":"هل انت ؟",
     "driver":"سائق",
-    "customer":"عميل"
+    "customer":"عميل",
+    "sendEmail":"إرسال الايميل"
+
   },
   "addBeneficiary":{
     "addBeneficiary":"إضافة مستفيد",
