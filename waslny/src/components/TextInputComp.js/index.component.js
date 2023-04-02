@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Alert, TouchableOpacity } from 'react-native';
-import { TextInput, Text } from 'react-native-paper';
+import {Alert, TouchableOpacity} from 'react-native';
+import {TextInput, Text} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
@@ -9,21 +9,33 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
-import { colors } from '../../styles/colors';
+import {colors} from '../../styles/colors';
 
 const TextInputComp = props => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
 
-  const { label,textColor,keyboardType , iconColor, value, onBlur, placeholder, leftIcon, isPassword, errorMsg, onChangeText } = props;
+  const {
+    label,
+    textColor,
+    keyboardType,
+    iconColor,
+    value,
+    onBlur,
+    placeholder,
+    leftIcon,
+    isPassword,
+    errorMsg,
+    onChangeText,
+  } = props;
   const [isSecurePass, setIsSecurePass] = React.useState(isPassword);
 
   const chagneSecure = () => {
     setIsSecurePass(!isSecurePass);
   };
   const showError = () => {
-    Alert.alert(errorMsg.toString())
-  }
+    Alert.alert(errorMsg.toString());
+  };
 
   return (
     <TextInput
@@ -37,8 +49,8 @@ const TextInputComp = props => {
       style={style.textInput}
       mode="outlined"
       outlineColor={iconColor}
-      activeOutlineColor={iconColor}
-      theme={{ roundness: wp(5) }}
+      activeOutlineColor={'gray'}
+      theme={{roundness: wp(5)}}
       keyboardType={keyboardType}
       left={
         isPassword ? (
@@ -57,12 +69,16 @@ const TextInputComp = props => {
           />
         )
       }
-      right={errorMsg && <TextInput.Icon
-        onPress={showError}
-        icon={'alert'}
-        iconColor={colors.light.ERROR}
-        size={wp(7)}
-      />}
+      right={
+        errorMsg && (
+          <TextInput.Icon
+            onPress={showError}
+            icon={'alert'}
+            iconColor={colors.light.ERROR}
+            size={wp(7)}
+          />
+        )
+      }
     />
   );
 };

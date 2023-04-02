@@ -72,6 +72,7 @@ const SignIn = ({navigation}) => {
           }
         });
     } catch (error) {
+      dispatch(hideLoader());
       console.log('catch sign In Screen', error);
     }
   };
@@ -85,17 +86,18 @@ const SignIn = ({navigation}) => {
         .then(() => {
           dispatch(hideLoader());
           showToast(1, strings('firebaseSuccess.emailSent'));
+          setShowFPModal(false);
         })
         .catch(error => {
           dispatch(hideLoader());
           switch (error.code) {
-            case 'auth/email-already-in-use':
-              showToast(2, strings('firebaseErrors.emailAlreadyInUse'));
+            case 'auth/user-not-found':
+              showToast(2, strings('firebaseErrors.userNotFound'));
               break;
           }
-          console.log('catch sign In Screen', error);
         });
     } catch (error) {
+      dispatch(hideLoader());
       console.log('catch sign In Screen', error);
     }
   };
@@ -108,7 +110,7 @@ const SignIn = ({navigation}) => {
   };
 
   const [loginType, setLoginType] = React.useState('1');
-  const [showFPModal, setShowFPModal] = React.useState(true);
+  const [showFPModal, setShowFPModal] = React.useState(false);
 
   let schema = yup.object().shape({
     email: yup
@@ -265,7 +267,12 @@ const SignIn = ({navigation}) => {
         color={theme.colors.TEXT_TEXT_SECONDARY}>
         {strings('signIn.forgetPassword')}
       </CText>
-      <CText style={style.text} color={theme.colors.TEXT_TEXT_SECONDARY}>
+      <CText
+        onPress={() => {
+          console.log('hello');
+        }}
+        style={style.text}
+        color={theme.colors.TEXT_TEXT_SECONDARY}>
         {strings('signIn.dontHaveAnAccount')}
         <Text style={[styles.text, {color: 'blue'}]}>
           {' '}
