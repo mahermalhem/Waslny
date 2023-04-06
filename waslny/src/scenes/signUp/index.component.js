@@ -33,7 +33,7 @@ import {
 import {showToast} from '../../utils/helpers';
 import ModalComp from '../../components/ModalComp/index.component';
 
-const SignIn = ({navigation}) => {
+const SignUp = ({navigation}) => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
   const emailFormRef = useRef();
@@ -138,40 +138,6 @@ const SignIn = ({navigation}) => {
 
   return (
     <MainContainer>
-      <View
-        style={{
-          margin: wp(3),
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '20%',
-          alignSelf: isRTL ? 'flex-end' : 'flex-start',
-        }}>
-        <CText
-          onPress={() => {
-            dispatch(changeLanguageMethod({appLanguage: isRTL ? 'en' : 'ar'}));
-            saveLanguage(isRTL ? 'en' : 'ar');
-          }}
-          color={theme.colors.TEXT_TEXT_SECONDARY}>
-          {strings('common.language')}
-        </CText>
-      </View>
-      <LogoComp />
-      <RadioButton.Group
-        onValueChange={newValue => setLoginType(newValue)}
-        value={loginType}>
-        <View
-          style={{
-            width: '85%',
-            alignItems: 'center',
-            flexDirection: isRTL ? 'row-reverse' : 'row',
-          }}>
-          <Text style={style.text}>{strings('signIn.areU')} : </Text>
-          <RadioButton value="1" />
-          <Text style={style.text}>{strings('signIn.driver')}</Text>
-          <RadioButton value="2" />
-          <Text style={style.text}>{strings('signIn.customer')}</Text>
-        </View>
-      </RadioButton.Group>
       {loginType == 1 ? (
         <Formik
           innerRef={emailFormRef}
@@ -259,26 +225,6 @@ const SignIn = ({navigation}) => {
           )}
         </Formik>
       )}
-      <CText
-        style={style.text}
-        onPress={() => {
-          setShowFPModal(true);
-        }}
-        color={theme.colors.TEXT_TEXT_SECONDARY}>
-        {strings('signIn.forgetPassword')}
-      </CText>
-      <CText
-        onPress={() => {
-          console.log('hello');
-        }}
-        style={style.text}
-        color={theme.colors.TEXT_TEXT_SECONDARY}>
-        {strings('signIn.dontHaveAnAccount')}
-        <Text style={[styles.text, {color: 'blue'}]}>
-          {' '}
-          {strings('signIn.signUp')}
-        </Text>
-      </CText>
       <ModalComp
         visible={showFPModal}
         setVisible={setShowFPModal}
@@ -324,4 +270,4 @@ const SignIn = ({navigation}) => {
   );
 };
 
-export default SignIn;
+export default SignUp;
