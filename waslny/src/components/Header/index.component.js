@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Alert, TouchableOpacity} from 'react-native';
-import {TextInput, Text, Button, IconButton} from 'react-native-paper';
+import {TextInput, Text, Button, IconButton, Appbar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import useTheme from '../../theme/useTheme';
 import useThemedStyles from '../../theme/useThemedStyles';
@@ -12,23 +12,24 @@ import {
 import {colors} from '../../styles/colors';
 import {FONT_FAMILY} from '../../constants/FONT';
 
-const ButtonComp = props => {
+const HeaderComp = props => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
 
-  const {label, textColor, icon, errorMsg, onPress} = props;
+  const {title, backButton, navigation} = props;
 
   return (
-    <Button
-      icon={icon}
-      mode="elevated"
-      textColor={theme.colors.TEXT}
-      style={style.button}
-      onPress={onPress}
-      uppercase>
-      <Text style={style.text}>{label}</Text>
-    </Button>
+    <Appbar.Header style={style.header}>
+      {backButton && (
+        <Appbar.BackAction
+          onPress={() => {
+            navigation.goBack();
+          }}
+        />
+      )}
+      {title && <Appbar.Content title={title} />}
+    </Appbar.Header>
   );
 };
 
-export default ButtonComp;
+export default HeaderComp;

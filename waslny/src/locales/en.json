@@ -34,6 +34,11 @@
   "firebaseSuccess":{
     "emailSent":"Email sent"
   },
+  "headers":{
+    "signUp":"SIGN UP",
+    "customerSignUp":"Customer Sign Up",
+    "driverSignUp":"Driver Sign Up"
+  },
   "splash": {
     "splashTitle": "Splash Screen"
   },
@@ -68,6 +73,11 @@
     "driver":"Driver",
     "customer":"Customer",
     "sendEmail":"Send email"
+  },
+  "signUp":{
+    "signUp":"Sign up",
+    "driver":"Driver",
+    "customer":"Customer",
   },
   "addBeneficiary":{
     "addBeneficiary":"Add beneficiary",

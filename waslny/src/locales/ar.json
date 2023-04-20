@@ -33,6 +33,9 @@
   "firebaseSuccess":{
     "emailSent":"تم إرسال الايميل"
   },
+  "headers":{
+    "signUp":"التسجيل"
+  },
   "splash": {
     "splashTitle": "سبلاش"
   },
@@ -67,7 +70,9 @@
     "driver":"سائق",
     "customer":"عميل",
     "sendEmail":"إرسال الايميل"
-
+  },
+  "signUp":{
+    "signUp":"تسجيل"
   },
   "addBeneficiary":{
     "addBeneficiary":"إضافة مستفيد",

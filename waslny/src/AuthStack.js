@@ -8,7 +8,9 @@ import SceneName from './scenes/SceneName';
 import SignIn from './scenes/signIn/index.component';
 import PinCode from './scenes/pinCode/index.component';
 import ToastComp from './components/ToastComp/index.component';
-import SignUp from './scenes/signUp/index.component';
+import SignUp from './scenes/signUpScreens/signUp/index.component';
+import CustomerSignUp from './scenes/signUpScreens/customerSignUp/index.component';
+import DriverSignUp from './scenes/signUpScreens/driverSignUp/index.component';
 
 const StackHome = createStackNavigator();
 
@@ -46,6 +48,24 @@ function AuthStack({navigation}, props) {
           component={PinCode}
           options={{
             title: 'Pin code',
+            // When logging out, a pop animation feels intuitive
+            animationTypeForReplace: 'push',
+          }}
+        />
+        <Stack.Screen
+          name={SceneName.DriverSignUp}
+          component={DriverSignUp}
+          options={{
+            title: 'Driver SignUp',
+            // When logging out, a pop animation feels intuitive
+            animationTypeForReplace: 'push',
+          }}
+        />
+        <Stack.Screen
+          name={SceneName.CustomerSignUp}
+          component={CustomerSignUp}
+          options={{
+            title: 'Customer SignUp',
             // When logging out, a pop animation feels intuitive
             animationTypeForReplace: 'push',
           }}

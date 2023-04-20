@@ -20,9 +20,11 @@ const MainContainer = props => {
   const disKeyboard = () => {
     Keyboard.dismiss();
   };
+  const {Cstyle={}} = props;
+
   return (
     <TouchableWithoutFeedback onPress={disKeyboard}>
-      <View style={style.body}>
+      <View style={[style.body,Cstyle]}>
         <ToastComp />
         {props.children}
       </View>

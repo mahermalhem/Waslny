@@ -12,23 +12,25 @@ import {
 import {colors} from '../../styles/colors';
 import {FONT_FAMILY} from '../../constants/FONT';
 
-const ButtonComp = props => {
+const RoundButtonComp = props => {
   const theme = useTheme();
   const style = useThemedStyles(styles);
 
-  const {label, textColor, icon, errorMsg, onPress} = props;
+  const {label, icon, size = 100, onPress} = props;
 
   return (
-    <Button
-      icon={icon}
-      mode="elevated"
-      textColor={theme.colors.TEXT}
-      style={style.button}
+    <TouchableOpacity
+      style={[
+        style.button,
+        {width: size, height: size, borderRadius: size / 2},
+      ]}
       onPress={onPress}
       uppercase>
-      <Text style={style.text}>{label}</Text>
-    </Button>
+      <Text numberOfLines={2} style={style.text}>
+        {label}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
-export default ButtonComp;
+export default RoundButtonComp;
